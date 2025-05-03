@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-output: "export", // <-- tells Next.js to generate static HTML (works with next export)
+  output: "export", // Generate static HTML for Twitch
+  images: {
+    unoptimized: true, // Required for static export
+  },
+  eslint: {
+    ignoreDuringBuilds: true, // Prevent ESLint from blocking builds
+  },
+  typescript: {
+    ignoreBuildErrors: true, // Prevent TypeScript errors from blocking builds
+  },
   async headers() {
     return [
       {
@@ -12,17 +21,8 @@ output: "export", // <-- tells Next.js to generate static HTML (works with next 
           },
         ],
       },
-    ]
+    ];
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
