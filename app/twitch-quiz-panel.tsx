@@ -271,7 +271,9 @@ export default function TwitchQuizPanel() {
             {score}/{quizData.length}
           </strong>
         </p>
-        <h3 className="font-bold text-xl" style={{ color: "#ffc107" }}>{personality.title}</h3>
+        <h3 className="font-bold text-xl" style={{ color: "#ffc107" }}>
+          {personality.title}
+        </h3>
         <p>{personality.description}</p>
         <button onClick={openFullGame}>Play Full Game</button>
       </div>
